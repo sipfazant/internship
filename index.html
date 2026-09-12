@@ -36,29 +36,30 @@
     </header>-->
 
     <header>
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md position-relative">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="top-row position-relative w-100">
+                    <!--Hamburger-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <!--Center logo-->
+                    <a class="navbar-brand logo-center" href="https://www.ict-worx.com/">
+                        <img src="afbeeldingen/logo.webp" alt="Logo" id="logo">
+                    </a>
+    
+                    <!--Contact-->
+                    <a class="nav-link contact-link" href="contact.html" >Contact us</a>
+                </div>
+
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="index.html" >Over mij</a>
-                        <a class="nav-link" aria-disabled="true" href="Bedrijf.html" >Over ICT-worx</a>
+                        <a class="nav-link" href="Bedrijf.html" >Over ICT-worx</a>
                     </div>
                 </div>
-
-                <div class="position-absolute top-50 start-50 p-2 translate-middle">
-                    <a class="navbar-brand" href="https://www.ict-worx.com/">
-                        <img src="afbeeldingen/logo.webp" alt="Logo" id="logo">
-                    </a>
-                </div>
-
-                <div>
-                    <div class="navbar-nav">
-                        <a href="contact.html" class="nav-link">Contact us</a>
-                    </div>
-                </div>
+                                
             </div>
 
         </nav>
