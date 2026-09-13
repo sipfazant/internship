@@ -1,0 +1,26 @@
+/*Everything for the Hero section*/
+#hero{
+    color: white;
+    background-color: rgb(22, 22, 22);
+    height: 40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero{
+    width: 30em;
+}
+h1.hero{
+    font-size: 20rem;
+}
+
+hr{
+    width: calc(100% - 20%);
+    display: block;
+    height: 5px;
+    border: 0;
+    border-top: 2px solid white;
+    margin: 2px auto;
+}
+
+/*Everything for the Over-mij section*/
