@@ -43,11 +43,36 @@
 
     <main>
         <section id="contact" class="px-4 py-5">
-            <h1>Contact us</h1>
-            <div class="input-group mb-3S">
-                <input type="texts" class="form-control" placeholder="Naam" aria-label="Naam">
+            <div class="row g-2">
+                <div class="col-md">
+                    <h1>Contact us</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, fuga ipsa harum consequatur iure alias reprehenderit. Earum, facilis, similique nihil ea, dolores tempora quo cum placeat natus repellat aliquam. Aspernatur!</p>
+                </div>
+                <div class="col-md">
+                    <!--For first name and last name-->
+                    <div class="row g-2">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="floatingTextFirstName" placeholder="John"></textarea>
+                                <label for="floatingTextFirstName">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="floatingTextLastName" placeholder="Smith"></textarea>
+                                <label for="floatingTextLastName">Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--For email-->
+                    <div class="form-floating mt-2">
+                        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                        <label for="floatingEmail">Email address</label>
+                    </div>
+                </div>
             </div>
-
+            
+            
         </section>
     </main>
 
