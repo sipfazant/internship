@@ -1,4 +1,4 @@
-/*Everything for the Hero section*/
+/* Everything for the Hero section */
 #hero{
     color: white;
     background-color: rgb(22, 22, 22);
@@ -23,4 +23,29 @@ hr{
     margin: 2px auto;
 }
 
-/*Everything for the Over-mij section*/
+/* Everything for the sup-nav section */
+.sup-nav {
+    --bs-nav-link-color: black;
+    --bs-nav-link-hover-font: black;
+}
+
+.sup-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.sup-nav .nav-item:not(:last-child)::after {
+    content: "|";
+    color: black;
+}
+
+.sup-nav .nav-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sup-nav .nav-link:hover {
+    transform: scale(1.1);
+    color: black;
+    font-weight: bold;
+}
+/* Everything for the Over-mij section */
