@@ -1,3 +1,22 @@
 textarea{
     resize: none;
 }
+
+#floatingTextComment{
+    height: 100px;
+}
+
+#contact{
+    padding: 10%;
+}
+
+.form{
+    padding: 2%;
+}
+
+.contact-us{
+    padding-right: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

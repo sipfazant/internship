@@ -42,33 +42,73 @@
     </header>
 
     <main>
-        <section id="contact" class="px-4 py-5">
+        <section id="contact">
             <div class="row g-2">
-                <div class="col-md">
-                    <h1>Contact us</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, fuga ipsa harum consequatur iure alias reprehenderit. Earum, facilis, similique nihil ea, dolores tempora quo cum placeat natus repellat aliquam. Aspernatur!</p>
+                <div class="col-md contact-us">
+                    <div>
+                        <h1>Contact us</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                             Aperiam, fuga ipsa harum consequatur iure alias reprehenderit.
+                              Earum, facilis, similique nihil ea, dolores tempora quo cum placeat natus repellat aliquam.
+                               Aspernatur!</p>
+                    </div>
+                    
                 </div>
-                <div class="col-md">
-                    <!--For first name and last name-->
-                    <div class="row g-2">
-                        <div class="col-md">
-                            <div class="form-floating">
-                                <textarea class="form-control" id="floatingTextFirstName" placeholder="John"></textarea>
-                                <label for="floatingTextFirstName">First Name</label>
+                <div class="col-md shadow-lg rounded">
+                    <form class="needs-validation form" novalidate>
+                        <!--For first name and last name-->
+                        <div class="row g-2">
+                            <!--First name-->
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingTextFirstName" placeholder="John" required>
+                                    <label for="floatingTextFirstName">First Name</label>
+                                    <div class="invalid-feedback">
+                                        Please enter your first name!
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Last name-->
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingTextLastName" placeholder="Smith" required>
+                                    <label for="floatingTextLastName">Last Name</label>
+                                    <div class="invalid-feedback">
+                                        Please enter your last name!
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md">
-                            <div class="form-floating">
-                                <textarea class="form-control" id="floatingTextLastName" placeholder="Smith"></textarea>
-                                <label for="floatingTextLastName">Last Name</label>
+                        <!--For email-->
+                        <div class="form-floating mt-2">
+                            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+                            <label for="floatingEmail">Email address</label>
+                            <div class="invalid-feedback">
+                                Please enter your email!
                             </div>
                         </div>
-                    </div>
-                    <!--For email-->
-                    <div class="form-floating mt-2">
-                        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
-                        <label for="floatingEmail">Email address</label>
-                    </div>
+                        <!--Comment-->
+                        <div class="form-floating mt-2">
+                            <textarea class="form-control textarea" id="floatingTextComment" placeholder="help"></textarea>
+                            <label for="floatingTextLastName">Comments</label>
+                        </div>
+                        <!--Accept TOS-->
+                        <div class="mt-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Agree to terms and conditions
+                                </label>
+                            </div>
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                        <!--Submit button-->
+                        <div class="form-floating mt-2">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             
@@ -96,5 +136,7 @@
             </ul>
         </footer>
     </div>
+
+    <script src="check.js"></script>
 </body>
 </html>
