@@ -45,3 +45,12 @@
 .navbar .nav-link{
     padding: 7px 15px;
 }
+
+/* Scrollbar */
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}

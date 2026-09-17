@@ -1,17 +1,32 @@
 /* Everything for the Hero section */
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
 #hero{
     color: white;
-    background-color: rgb(22, 22, 22);
-    height: 40em;
+    /* For background image*/
+    background-image: url("../afbeeldingen/background-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    
 }
-.hero{
-    width: 30em;
+#hero div{
+    width: 70%;
+    border: 1px solid red;
 }
-h1.hero{
-    font-size: 20rem;
+
+.hero h1{
+    font-family: monospace;
 }
 
 hr{
@@ -49,3 +64,16 @@ hr{
     font-weight: bold;
 }
 /* Everything for the Over-mij section */
+#over-mij div{
+    height: 30%;
+    border: 1px solid red;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#mijn-interesses div{
+    border: 1px solid red;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
