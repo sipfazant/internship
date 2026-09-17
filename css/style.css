@@ -55,7 +55,7 @@ html::-webkit-scrollbar {
     display: none;
 }
 
-.navbar {
+#navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -63,12 +63,14 @@ html::-webkit-scrollbar {
 
     z-index: 1000;
 
-    background: transparent !important;
-    border: none;
-
     transition: transform 0.3s ease;
 }
 
-.navbar.nav-hidden {
+#navbar.nav-hidden {
     transform: translateY(-100%);
+}
+
+.navbar {
+    background: transparent !important;
+    border: none;
 }
