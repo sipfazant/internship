@@ -7,20 +7,20 @@
 
 |-Afbeeldingen<br />
 |<br />
-|-Componentents<br />
-|   |-navbar.html<br />
-|   |-footer.html<br />
+├Componentents<br />
+|   ├navbar.html<br />
+|   └footer.html<br />
 |<br />
-|-Css<br />
-|   |-Style-bedrijf.css<br />
-|   |-Style-contact.css<br />
-|   |-Style-index.css<br />
-|   |-Style.css<br />
+├Css<br />
+|   ├Style-bedrijf.css<br />
+|   ├Style-contact.css<br />
+|   ├Style-index.css<br />
+|   └Style.css<br />
 |<br />
-|-js<br />
-|   |-check.js<br />
-|   |-components.js<br />
+├js<br />
+|   ├check.js<br />
+|   └components.js<br />
 |<br />
-|-bedrijf.html<br />
-|-contact.html<br />
-|-index.html<br />
+├bedrijf.html<br />
+├contact.html<br />
+└index.html<br />
