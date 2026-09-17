@@ -8,7 +8,7 @@ body{
 #hero{
     color: white;
     /* For background image*/
-    background-image: url("../afbeeldingen/background-image.jpg");
+    background-image: url("../afbeeldingen/background-image.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -22,7 +22,6 @@ body{
 }
 #hero div{
     width: 70%;
-    border: 1px solid red;
 }
 
 .hero h1{

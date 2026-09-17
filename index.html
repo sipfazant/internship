@@ -67,6 +67,29 @@
     <div id="footer"></div>
 
     <script src="js/components.js"></script>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        let navbar = null;
+
+        window.addEventListener('scroll', () => {
+            if (!navbar) {
+                navbar = document.querySelector('.navbar');
+            }
+
+            if (!navbar) return;
+
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY <= 0 || currentScrollY < lastScrollY) {
+                navbar.classList.remove('nav-hidden');
+            } else {
+                navbar.classList.add('nav-hidden');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
 </body>
 
 </html>

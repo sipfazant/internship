@@ -54,3 +54,21 @@ html {
 html::-webkit-scrollbar {
     display: none;
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000;
+
+    background: transparent !important;
+    border: none;
+
+    transition: transform 0.3s ease;
+}
+
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+}
