@@ -5,22 +5,22 @@
 
 # Typologie
 
-|-Afbeeldingen
-|
-|-Componentents
-|   |-navbar.html
-|   |-footer.html
-|
-|-Css
-|   |-Style-bedrijf.css
-|   |-Style-contact.css
-|   |-Style-index.css
-|   |-Style.css
-|
-|-js
-|   |-check.js
-|   |-components.js
-|
-|-bedrijf.html
-|-contact.html
-|-index.html
+|-Afbeeldingen<br />
+|<br />
+|-Componentents<br />
+|   |-navbar.html<br />
+|   |-footer.html<br />
+|<br />
+|-Css<br />
+|   |-Style-bedrijf.css<br />
+|   |-Style-contact.css<br />
+|   |-Style-index.css<br />
+|   |-Style.css<br />
+|<br />
+|-js<br />
+|   |-check.js<br />
+|   |-components.js<br />
+|<br />
+|-bedrijf.html<br />
+|-contact.html<br />
+|-index.html<br />
