@@ -65,9 +65,12 @@ hr{
 /* Everything for the Over-mij section */
 #over-mij div{
     height: 30%;
-    border: 1px solid red;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+#over-mij img {
+    height: 500px;
 }
 
 #mijn-interesses div{
