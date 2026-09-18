@@ -1,11 +1,5 @@
 /* Everything for the Hero section */
-html{
-    height: 100%;
-}
-body{
-    height: 100%;
-}
-#hero{
+#hero {
     color: white;
     /* For background image*/
     background-image: url("../afbeeldingen/background-image.webp");
@@ -17,18 +11,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
+
+
 }
-#hero div{
+
+#hero div {
     width: 70%;
 }
 
-.hero h1{
+.hero h1 {
     font-family: monospace;
 }
 
-hr{
+hr {
     width: calc(100% - 20%);
     display: block;
     height: 5px;
@@ -62,20 +57,37 @@ hr{
     color: black;
     font-weight: bold;
 }
+
 /* Everything for the Over-mij section */
-#over-mij div{
-    height: 30%;
-    margin-left: 10%;
-    margin-right: 10%;
+#over-mij {
+    padding: 10%;
+}
+
+.over-mij-text {
+    padding-right: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #over-mij img {
-    height: 500px;
+    height: 600px;
 }
 
-#mijn-interesses div{
+/* Everything for the Mijn-Interesses section */
+#mijn-interesses {
+    color: white;
     border: 1px solid red;
+    background-color: black;
+}
+
+#mijn-interesses div {
     margin-left: 10%;
     margin-right: 10%;
+}
 
+#mijn-interesses .col-md{
+    height: 40vh;
+    color: black;
+    background: white;
 }
