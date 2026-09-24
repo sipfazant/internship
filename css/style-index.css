@@ -11,8 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 #hero div {
@@ -75,19 +73,256 @@ hr {
 }
 
 /* Everything for the Mijn-Interesses section */
-#mijn-interesses {
-    color: white;
-    border: 1px solid red;
-    background-color: black;
+.interests {
+    background-color: #000;
+    color: #fff;
+    padding: 90px 0;
 }
 
-#mijn-interesses div {
-    margin-left: 10%;
-    margin-right: 10%;
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 70px;
 }
 
-#mijn-interesses .col-md{
-    height: 40vh;
-    color: black;
-    background: white;
+.interests-row {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.interest {
+    padding: 45px 35px;
+}
+
+.interest + .interest {
+    border-left: 1px solid #333;
+}
+
+.interest h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.interest p {
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    .interest + .interest {
+        border-left: none;
+        border-top: 1px solid #333;
+    }
+}
+
+/*Everything for the skills section*/
+.skills {
+    padding: 90px 10%;
+    background-color: #000;
+    color: #fff;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+}
+
+.skill {
+    padding: 40px;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.skill h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.skill p {
+    color: #aaa;
+    margin: 0;
+}
+
+/*Everything for the projects section*/
+.projects {
+    background-color: #000;
+    color: #fff;
+    padding: 100px 10%;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background-color: #333;
+    border: 1px solid #333;
+}
+
+.project {
+    background-color: #000;
+    min-height: 300px;
+    padding: 40px;
+    display: flex;
+    align-items: flex-end;
+    transition: background-color 0.3s ease;
+}
+
+.project-large {
+    grid-column: span 2;
+    min-height: 400px;
+}
+
+.project-content {
+    max-width: 600px;
+}
+
+.project-number {
+    font-size: 0.75rem;
+    color: #777;
+    letter-spacing: 2px;
+}
+
+.project h3 {
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.project-tech {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.project p {
+    color: #999;
+    line-height: 1.6;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+.project:hover {
+    background-color: #111;
+}
+
+@media (max-width: 768px) {
+
+    .projects {
+        padding: 70px 6%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-large {
+        grid-column: span 1;
+    }
+
+    .project {
+        min-height: 280px;
+    }
+}
+/*Everything for the internship section*/
+.internship {
+    background-color: #000;
+    color: #fff;
+    padding: 100px 10%;
+}
+
+.internship-intro {
+    max-width: 700px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.internship-subtitle {
+    color: #777;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.internship-intro > p:last-child {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+
+.internship-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.internship-item {
+    padding: 40px;
+}
+
+.internship-item + .internship-item {
+    border-left: 1px solid #333;
+}
+
+.internship-item span {
+    color: #666;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.internship-item h3 {
+    margin: 20px 0 15px;
+    font-size: 1.4rem;
+}
+
+.internship-item p {
+    color: #999;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+.internship-contact {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.internship-contact a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+}
+
+.internship-contact a:hover {
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+
+    .internship {
+        padding: 70px 6%;
+    }
+
+    .internship-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-item + .internship-item {
+        border-left: none;
+        border-top: 1px solid #333;
+    }
 }
