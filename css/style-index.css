@@ -1,3 +1,20 @@
+.section-label {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    margin-bottom: 70px;
+
+    color: #777;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+.about,
+.interests {
+    padding: 120px 10%;
+    background-color: #000;
+    color: #fff;
+}
 /* Everything for the Hero section */
 #hero {
     color: white;
@@ -30,90 +47,89 @@ hr {
     margin: 2px auto;
 }
 
-/* Everything for the sup-nav section */
-.sup-nav {
-    --bs-nav-link-color: black;
-    --bs-nav-link-hover-font: black;
-}
-
-.sup-nav .nav-item {
-    display: flex;
-    align-items: center;
-}
-
-.sup-nav .nav-item:not(:last-child)::after {
-    content: "|";
-    color: black;
-}
-
-.sup-nav .nav-link {
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.sup-nav .nav-link:hover {
-    transform: scale(1.1);
-    color: black;
-    font-weight: bold;
-}
-
 /* Everything for the Over-mij section */
-#over-mij {
-    padding: 10%;
-}
-
-.over-mij-text {
-    padding-right: 15%;
-    display: flex;
-    justify-content: center;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
     align-items: center;
 }
 
-#over-mij img {
-    height: 600px;
+.about-text h2 {
+    max-width: 800px;
+
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.1;
+    font-weight: 400;
+
+    margin-bottom: 40px;
+}
+
+.about-text p {
+    max-width: 650px;
+
+    color: #999;
+    line-height: 1.8;
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
 }
 
 /* Everything for the Mijn-Interesses section */
-.interests {
-    background-color: #000;
-    color: #fff;
-    padding: 90px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 70px;
-}
-
-.interests-row {
+.interest-list {
     border-top: 1px solid #333;
+}
+
+.interest-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+
+    padding: 40px 0;
+
     border-bottom: 1px solid #333;
 }
 
-.interest {
-    padding: 45px 35px;
+.interest-number {
+    color: #666;
+    font-size: 0.8rem;
 }
 
-.interest + .interest {
-    border-left: 1px solid #333;
+.interest-item h3 {
+    font-size: 2rem;
+    font-weight: 400;
+
+    margin: 0 0 12px;
 }
 
-.interest h3 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-}
+.interest-item p {
+    max-width: 650px;
 
-.interest p {
-    color: #aaa;
-    font-size: 0.9rem;
+    color: #999;
     line-height: 1.7;
+
     margin: 0;
 }
 
-@media (max-width: 991px) {
-    .interest + .interest {
-        border-left: none;
-        border-top: 1px solid #333;
+@media (max-width: 768px) {
+
+    .about,
+    .interests {
+        padding: 80px 6%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .interest-item {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .interest-item h3 {
+        font-size: 1.5rem;
     }
 }
 
