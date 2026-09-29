@@ -1,0 +1,1074 @@
+/* =========================================================
+   ICT-WORX PAGE
+   Elias Dutry - Internship Portfolio
+========================================================= */
+
+:root {
+    --bedrijf-black: #090909;
+    --bedrijf-dark: #101010;
+    --bedrijf-charcoal: #171717;
+    --bedrijf-grey: #242424;
+    --bedrijf-border: rgba(255, 255, 255, 0.12);
+
+    --bedrijf-white: #f1f1ef;
+    --bedrijf-text: #d2d2cf;
+    --bedrijf-muted: #888884;
+
+    --bedrijf-max-width: 1400px;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bedrijf-black);
+    color: var(--bedrijf-white);
+}
+
+.bedrijf-page {
+    overflow: hidden;
+}
+
+.bedrijf-page p {
+    margin-bottom: 0;
+}
+
+.bedrijf-page img {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+/*
+ * De navbar wordt dynamisch in #navbar geladen.
+ * Daardoor kunnen we het volledige component hier
+ * positioneren zonder een witte ruimte achter te laten.
+ */
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: transparent !important;
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.35s ease;
+}
+
+#navbar.nav-hidden {
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*
+ * Zorg ervoor dat een Bootstrap background class
+ * de transparante navbar niet overschrijft.
+ */
+#navbar .navbar {
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.bedrijf-hero {
+    position: relative;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: flex-end;
+
+    isolation: isolate;
+    overflow: hidden;
+
+    background: var(--bedrijf-black);
+}
+
+.bedrijf-hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+}
+
+.bedrijf-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: brightness(0.72);
+}
+
+/*
+ * Dit maakt de overgang van afbeelding naar zwart
+ * geleidelijk in plaats van hard.
+ */
+.bedrijf-hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(9, 9, 9, 0.05) 0%,
+            rgba(9, 9, 9, 0.08) 42%,
+            rgba(9, 9, 9, 0.30) 58%,
+            rgba(9, 9, 9, 0.78) 76%,
+            var(--bedrijf-black) 100%
+        );
+}
+
+.bedrijf-hero-content {
+    position: relative;
+
+    width: 100%;
+
+    padding-top: 180px;
+    padding-bottom: 110px;
+}
+
+.eyebrow,
+.section-label,
+.service-kicker,
+.environment-label,
+.intro-stat span,
+.internship-info span,
+.cta-small {
+    font-size: 0.68rem;
+    line-height: 1.2;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: var(--bedrijf-muted);
+}
+
+.bedrijf-hero h1 {
+    margin: 25px 0 28px;
+
+    max-width: 1000px;
+
+    font-size: clamp(4.5rem, 11vw, 10rem);
+    line-height: 0.82;
+
+    font-weight: 500;
+    letter-spacing: -0.055em;
+}
+
+.hero-intro {
+    max-width: 500px;
+
+    font-size: clamp(1rem, 1.7vw, 1.3rem);
+    line-height: 1.55;
+
+    color: rgba(241, 241, 239, 0.78);
+}
+
+.hero-scroll {
+    position: absolute;
+    right: 40px;
+    bottom: 42px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.5);
+
+    transform: rotate(90deg);
+    transform-origin: right center;
+}
+
+.hero-scroll-line {
+    display: block;
+
+    width: 50px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.bedrijf-section {
+    position: relative;
+
+    padding: 150px 0;
+
+    background: var(--bedrijf-black);
+}
+
+.bedrijf-section-dark {
+    background: var(--bedrijf-dark);
+}
+
+.section-topline {
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
+
+    margin-bottom: 70px;
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--bedrijf-border);
+}
+
+.section-number {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    color: var(--bedrijf-muted);
+}
+
+.section-label {
+    color: var(--bedrijf-muted);
+}
+
+
+/* =========================================================
+   01 — INTRO
+========================================================= */
+
+.intro-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.85fr) minmax(350px, 1fr);
+
+    gap: 10vw;
+}
+
+.intro-title h2,
+.wifi-heading h2,
+.environments-heading h2,
+.custom-intro h2,
+.internship-title h2 {
+    margin: 0;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.9;
+
+    font-weight: 500;
+    letter-spacing: -0.05em;
+}
+
+.intro-content {
+    max-width: 650px;
+}
+
+.lead-text {
+    margin-bottom: 30px !important;
+
+    font-size: clamp(1.2rem, 2vw, 1.65rem);
+    line-height: 1.45;
+
+    color: var(--bedrijf-white);
+}
+
+.intro-content > p:not(.lead-text) {
+    max-width: 600px;
+
+    font-size: 1rem;
+    line-height: 1.75;
+
+    color: var(--bedrijf-muted);
+}
+
+.intro-stats {
+    display: flex;
+
+    gap: 70px;
+
+    margin-top: 65px;
+    padding-top: 30px;
+
+    border-top: 1px solid var(--bedrijf-border);
+}
+
+.intro-stat {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.intro-stat strong {
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    line-height: 0.9;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+
+.intro-stat span {
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   SERVICE SECTIONS
+========================================================= */
+
+.service-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.8fr)
+        minmax(0, 1.2fr);
+
+    gap: 8vw;
+
+    align-items: center;
+}
+
+.service-layout-image-left {
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(0, 0.8fr);
+}
+
+.service-copy {
+    max-width: 600px;
+}
+
+.service-kicker {
+    margin-bottom: 25px;
+}
+
+.service-copy h2 {
+    margin: 0 0 32px;
+
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    line-height: 0.85;
+
+    font-weight: 500;
+    letter-spacing: -0.055em;
+}
+
+.service-lead {
+    margin-bottom: 25px !important;
+
+    font-size: 1.2rem;
+    line-height: 1.5;
+
+    color: var(--bedrijf-white);
+}
+
+.service-copy > p:not(.service-kicker):not(.service-lead) {
+    font-size: 1rem;
+    line-height: 1.75;
+
+    color: var(--bedrijf-muted);
+}
+
+.service-image {
+    overflow: hidden;
+}
+
+.image-large {
+    min-height: 600px;
+}
+
+.image-large img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+
+    object-fit: cover;
+
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-image:hover img {
+    transform: scale(1.025);
+}
+
+.service-tags,
+.wifi-meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 40px;
+}
+
+.service-tags span,
+.wifi-meta span {
+    display: inline-block;
+
+    padding: 8px 11px;
+
+    border: 1px solid var(--bedrijf-border);
+
+    font-size: 0.61rem;
+    line-height: 1;
+
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+
+    color: var(--bedrijf-muted);
+}
+
+
+/* =========================================================
+   WIFI
+========================================================= */
+
+.wifi-section {
+    padding-bottom: 0;
+}
+
+.wifi-heading {
+    display: grid;
+
+    grid-template-columns: 1fr 0.7fr;
+    gap: 10vw;
+
+    align-items: end;
+
+    margin-bottom: 75px;
+}
+
+.wifi-heading p {
+    max-width: 450px;
+
+    font-size: 1.15rem;
+    line-height: 1.6;
+
+    color: var(--bedrijf-muted);
+}
+
+.wifi-image-wrapper {
+    width: 100%;
+
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.wifi-image-wrapper img {
+    width: 100%;
+    height: min(70vh, 800px);
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wifi-image-wrapper:hover img {
+    transform: scale(1.015);
+}
+
+.wifi-bottom {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 10vw;
+
+    padding: 45px 0 20px;
+}
+
+.wifi-bottom > p {
+    max-width: 600px;
+
+    font-size: 1rem;
+    line-height: 1.75;
+
+    color: var(--bedrijf-muted);
+}
+
+.wifi-meta {
+    justify-content: flex-start;
+
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   ENVIRONMENTS
+========================================================= */
+
+.environments-section {
+    background: var(--bedrijf-dark);
+}
+
+.environments-heading {
+    display: grid;
+
+    grid-template-columns: 1fr 0.65fr;
+    gap: 10vw;
+
+    align-items: end;
+
+    margin-bottom: 110px;
+}
+
+.environments-heading > p {
+    max-width: 470px;
+
+    font-size: 1rem;
+    line-height: 1.75;
+
+    color: var(--bedrijf-muted);
+}
+
+.environment-item {
+    display: grid;
+
+    grid-template-columns: 70px minmax(0, 1.2fr) minmax(280px, 0.7fr);
+
+    gap: 35px;
+
+    align-items: center;
+
+    padding: 55px 0;
+
+    border-top: 1px solid var(--bedrijf-border);
+}
+
+.environment-item:last-child {
+    border-bottom: 1px solid var(--bedrijf-border);
+}
+
+.environment-item-reverse {
+    grid-template-columns: 70px minmax(280px, 0.7fr) minmax(0, 1.2fr);
+}
+
+.environment-item-reverse .environment-image {
+    order: 3;
+}
+
+.environment-item-reverse .environment-copy {
+    order: 2;
+}
+
+.environment-number {
+    align-self: start;
+
+    padding-top: 6px;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+
+    color: var(--bedrijf-muted);
+}
+
+.environment-image {
+    overflow: hidden;
+
+    min-height: 420px;
+}
+
+.environment-image img {
+    height: 100%;
+    min-height: 420px;
+
+    object-fit: cover;
+
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.environment-item:hover .environment-image img {
+    transform: scale(1.025);
+}
+
+.environment-copy {
+    padding-left: 20px;
+}
+
+.environment-label {
+    margin-bottom: 18px;
+}
+
+.environment-copy h3 {
+    margin: 0 0 20px;
+
+    max-width: 520px;
+
+    font-size: clamp(1.7rem, 3vw, 3rem);
+    line-height: 1;
+
+    font-weight: 400;
+    letter-spacing: -0.035em;
+}
+
+.environment-copy p {
+    max-width: 500px;
+
+    font-size: 0.98rem;
+    line-height: 1.7;
+
+    color: var(--bedrijf-muted);
+}
+
+
+/* =========================================================
+   CUSTOM SOLUTIONS
+========================================================= */
+
+.custom-section {
+    background: var(--bedrijf-black);
+}
+
+.custom-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 0.65fr;
+    gap: 10vw;
+
+    align-items: end;
+
+    margin-bottom: 80px;
+}
+
+.custom-intro > p {
+    max-width: 480px;
+
+    font-size: 1rem;
+    line-height: 1.75;
+
+    color: var(--bedrijf-muted);
+}
+
+.custom-solutions {
+    border-top: 1px solid var(--bedrijf-border);
+}
+
+.custom-solution {
+    display: grid;
+
+    grid-template-columns: 90px 1fr auto;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid var(--bedrijf-border);
+
+    color: inherit;
+    text-decoration: none;
+
+    transition:
+        padding 0.35s ease,
+        background-color 0.35s ease;
+}
+
+.custom-solution:hover {
+    padding-left: 14px;
+    padding-right: 14px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.custom-index {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+
+    color: var(--bedrijf-muted);
+}
+
+.custom-solution h3 {
+    margin: 0 0 8px;
+
+    font-size: clamp(1.6rem, 3vw, 2.7rem);
+    line-height: 1;
+
+    font-weight: 400;
+    letter-spacing: -0.035em;
+}
+
+.custom-solution p {
+    font-size: 0.85rem;
+
+    color: var(--bedrijf-muted);
+}
+
+.custom-arrow {
+    font-size: 1.5rem;
+
+    color: var(--bedrijf-muted);
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+.custom-solution:hover .custom-arrow {
+    transform: translateX(6px);
+    color: var(--bedrijf-white);
+}
+
+
+/* =========================================================
+   INTERNSHIP
+========================================================= */
+
+.internship-section {
+    background: var(--bedrijf-charcoal);
+}
+
+.internship-layout {
+    display: grid;
+
+    grid-template-columns: minmax(280px, 0.8fr) minmax(350px, 1fr);
+
+    gap: 10vw;
+}
+
+.internship-copy {
+    max-width: 650px;
+}
+
+.internship-copy > p:not(.lead-text) {
+    font-size: 1rem;
+    line-height: 1.75;
+
+    color: var(--bedrijf-muted);
+}
+
+.internship-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    margin-top: 60px;
+    padding-top: 30px;
+
+    border-top: 1px solid var(--bedrijf-border);
+}
+
+.internship-info > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.internship-info strong {
+    font-size: 1.3rem;
+
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.internship-info p {
+    font-size: 0.9rem;
+    color: var(--bedrijf-muted);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.bedrijf-cta {
+    padding: 90px 0 120px;
+
+    background: var(--bedrijf-black);
+}
+
+.cta-link {
+    display: grid;
+
+    grid-template-columns: 140px 1fr auto;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 40px 0;
+
+    border-top: 1px solid var(--bedrijf-border);
+    border-bottom: 1px solid var(--bedrijf-border);
+
+    color: var(--bedrijf-white);
+    text-decoration: none;
+}
+
+.cta-large {
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 0.85;
+
+    font-weight: 400;
+    letter-spacing: -0.055em;
+
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta-arrow {
+    font-size: 2rem;
+
+    transition: transform 0.4s ease;
+}
+
+.cta-link:hover .cta-large {
+    transform: translateX(10px);
+}
+
+.cta-link:hover .cta-arrow {
+    transform: translateX(8px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+/*
+ * Alleen bedoeld om ervoor te zorgen dat een bestaande
+ * footer ook op deze donkere pagina correct blijft.
+ */
+
+.bedrijf-page ~ footer,
+footer {
+    background: var(--bedrijf-black);
+    color: var(--bedrijf-white);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .bedrijf-section {
+        padding: 120px 0;
+    }
+
+    .bedrijf-hero-content {
+        padding-top: 160px;
+        padding-bottom: 90px;
+    }
+
+    .intro-layout,
+    .internship-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .service-layout,
+    .service-layout-image-left {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .service-layout-image-left .service-image {
+        order: 1;
+    }
+
+    .service-layout-image-left .service-copy {
+        order: 2;
+    }
+
+    .image-large,
+    .image-large img {
+        min-height: 500px;
+    }
+
+    .wifi-heading,
+    .environments-heading,
+    .custom-intro,
+    .wifi-bottom {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .environment-item,
+    .environment-item-reverse {
+        grid-template-columns: 50px 1fr;
+        gap: 25px;
+    }
+
+    .environment-image,
+    .environment-item-reverse .environment-image {
+        grid-column: 2;
+        grid-row: 1;
+        order: initial;
+    }
+
+    .environment-copy,
+    .environment-item-reverse .environment-copy {
+        grid-column: 2;
+        grid-row: 2;
+        order: initial;
+
+        padding-left: 0;
+    }
+
+    .environment-number {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .cta-link {
+        grid-template-columns: 100px 1fr auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .bedrijf-section {
+        padding: 90px 0;
+    }
+
+    .bedrijf-hero {
+        min-height: 90svh;
+    }
+
+    .bedrijf-hero-content {
+        padding-top: 130px;
+        padding-bottom: 70px;
+    }
+
+    .bedrijf-hero h1 {
+        margin-top: 20px;
+
+        font-size: clamp(4rem, 18vw, 6rem);
+        line-height: 0.84;
+    }
+
+    .hero-intro {
+        max-width: 360px;
+        font-size: 1rem;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .section-topline {
+        margin-bottom: 50px;
+    }
+
+    .section-number {
+        font-size: 0.7rem;
+    }
+
+    .intro-title h2,
+    .wifi-heading h2,
+    .environments-heading h2,
+    .custom-intro h2,
+    .internship-title h2 {
+        font-size: clamp(3rem, 16vw, 5rem);
+    }
+
+    .service-copy h2 {
+        font-size: clamp(3.3rem, 17vw, 5.5rem);
+    }
+
+    .lead-text {
+        font-size: 1.15rem;
+    }
+
+    .intro-stats {
+        gap: 35px;
+        margin-top: 50px;
+    }
+
+    .intro-stat strong {
+        font-size: 3rem;
+    }
+
+    .image-large,
+    .image-large img {
+        min-height: 350px;
+    }
+
+    .wifi-image-wrapper img {
+        height: 55vh;
+        min-height: 400px;
+    }
+
+    .wifi-bottom {
+        padding-top: 30px;
+    }
+
+    .environment-item,
+    .environment-item-reverse {
+        grid-template-columns: 35px 1fr;
+        gap: 18px;
+    }
+
+    .environment-image,
+    .environment-image img {
+        min-height: 300px;
+    }
+
+    .environment-copy h3 {
+        font-size: 1.8rem;
+    }
+
+    .custom-solution {
+        grid-template-columns: 40px 1fr auto;
+        gap: 15px;
+
+        padding: 24px 0;
+    }
+
+    .custom-solution h3 {
+        font-size: 1.8rem;
+    }
+
+    .custom-solution p {
+        line-height: 1.5;
+    }
+
+    .internship-info {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .cta-link {
+        grid-template-columns: 1fr auto;
+        gap: 15px;
+    }
+
+    .cta-small {
+        grid-column: 1 / -1;
+    }
+
+    .cta-large {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+    .cta-arrow {
+        font-size: 1.6rem;
+    }
+
+}
