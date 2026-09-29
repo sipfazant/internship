@@ -1,3 +1,6 @@
+body{
+    background-color: #000;
+}
 .section-label {
     display: flex;
     gap: 20px;
@@ -12,7 +15,6 @@
 .about,
 .interests {
     padding: 120px 10%;
-    background-color: #000;
     color: #fff;
 }
 /* Everything for the Hero section */
@@ -23,11 +25,25 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #000
+    );
+    pointer-events: none;
 }
 
 #hero div {
@@ -136,7 +152,6 @@ hr {
 /*Everything for the skills section*/
 .skills {
     padding: 90px 10%;
-    background-color: #000;
     color: #fff;
 }
 
@@ -165,7 +180,6 @@ hr {
 
 /*Everything for the projects section*/
 .projects {
-    background-color: #000;
     color: #fff;
     padding: 100px 10%;
 }
@@ -252,7 +266,6 @@ hr {
 }
 /*Everything for the internship section*/
 .internship {
-    background-color: #000;
     color: #fff;
     padding: 100px 10%;
 }

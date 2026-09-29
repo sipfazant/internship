@@ -2,6 +2,9 @@
 .logo{
     height: 20px;
 }
+.logo-white {
+    display: none;
+}
     /*Alles voor de Nav*/
 /*Changes some aspects of the main nav bar. Later needed for the logo and contact us*/
 .top-row{
@@ -46,13 +49,13 @@
     padding: 7px 15px;
 }
 
-/* Scrollbar */
-html {
-    scrollbar-width: none;
+/*Changes logo form black to white when going up*/
+.navbar.logo-light .logo-black {
+    display: none;
 }
 
-html::-webkit-scrollbar {
-    display: none;
+.navbar.logo-light .logo-white {
+    display: block;
 }
 
 #navbar {
@@ -70,7 +73,28 @@ html::-webkit-scrollbar {
     transform: translateY(-100%);
 }
 
-.navbar {
-    background: transparent !important;
-    border: none;
+.navbar.scrolled .nav-link{
+    color: #fff;
+}
+
+/* Scrollbar */
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/*Footer CSS*/
+footer{
+    color: #999;
+}
+footer .nav-link {
+    color: #999;
+}
+
+footer .nav-link:hover,
+footer .nav-link:focus {
+    color: #fff;
 }
