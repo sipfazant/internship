@@ -44,46 +44,6 @@ body {
     width: 100%;
 }
 
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-/*
- * De navbar wordt dynamisch in #navbar geladen.
- * Daardoor kunnen we het volledige component hier
- * positioneren zonder een witte ruimte achter te laten.
- */
-
-#navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-
-    background: transparent !important;
-
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 0.35s ease;
-}
-
-#navbar.nav-hidden {
-    transform: translateY(-120%);
-    opacity: 0;
-    pointer-events: none;
-}
-
-/*
- * Zorg ervoor dat een Bootstrap background class
- * de transparante navbar niet overschrijft.
- */
-#navbar .navbar {
-    background: transparent !important;
-}
-
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -786,75 +746,6 @@ body {
     color: var(--bedrijf-muted);
 }
 
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.bedrijf-cta {
-    padding: 90px 0 120px;
-
-    background: var(--bedrijf-black);
-}
-
-.cta-link {
-    display: grid;
-
-    grid-template-columns: 140px 1fr auto;
-    align-items: center;
-
-    gap: 30px;
-
-    padding: 40px 0;
-
-    border-top: 1px solid var(--bedrijf-border);
-    border-bottom: 1px solid var(--bedrijf-border);
-
-    color: var(--bedrijf-white);
-    text-decoration: none;
-}
-
-.cta-large {
-    font-size: clamp(3rem, 8vw, 8rem);
-    line-height: 0.85;
-
-    font-weight: 400;
-    letter-spacing: -0.055em;
-
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.cta-arrow {
-    font-size: 2rem;
-
-    transition: transform 0.4s ease;
-}
-
-.cta-link:hover .cta-large {
-    transform: translateX(10px);
-}
-
-.cta-link:hover .cta-arrow {
-    transform: translateX(8px);
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-/*
- * Alleen bedoeld om ervoor te zorgen dat een bestaande
- * footer ook op deze donkere pagina correct blijft.
- */
-
-.bedrijf-page ~ footer,
-footer {
-    background: var(--bedrijf-black);
-    color: var(--bedrijf-white);
-}
-
-
 /* =========================================================
    TABLET
 ========================================================= */
@@ -1052,23 +943,6 @@ footer {
     .internship-info {
         grid-template-columns: 1fr;
         gap: 25px;
-    }
-
-    .cta-link {
-        grid-template-columns: 1fr auto;
-        gap: 15px;
-    }
-
-    .cta-small {
-        grid-column: 1 / -1;
-    }
-
-    .cta-large {
-        font-size: clamp(3rem, 15vw, 5rem);
-    }
-
-    .cta-arrow {
-        font-size: 1.6rem;
     }
 
 }

@@ -1,8 +1,17 @@
 // Load navbar
 fetch("components/navbar.html")
-    .then(response => response.text())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Navbar kon niet geladen worden.");
+        }
+
+        return response.text();
+    })
     .then(data => {
         document.getElementById("navbar").innerHTML = data;
+    })
+    .catch(error => {
+        console.error(error);
     });
 
 // Navbar scroll behavior
@@ -16,6 +25,10 @@ window.addEventListener('scroll', () => {
 
     const currentScrollY = window.scrollY;
 
+    if (Math.abs(currentScrollY - lastScrollY) < 15) {
+        return;
+    }
+
     // Hide/show navbar
     if (currentScrollY <= 0 || currentScrollY < lastScrollY) {
         navbarContainer.classList.remove('nav-hidden');
@@ -23,7 +36,6 @@ window.addEventListener('scroll', () => {
         navbarContainer.classList.add('nav-hidden');
     }
 
-    // Change navbar appearance after hero
     if (currentScrollY > window.innerHeight) {
         navbar.classList.add('scrolled');
         navbar.classList.add('logo-light');

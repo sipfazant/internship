@@ -15,12 +15,14 @@
 
     <!-- CSS specifiek voor deze pagina -->
     <link rel="stylesheet" href="css/style-bedrijf.css">
+    
 </head>
 
-<body>
+<body class="dark-page">
 
     <!-- Reusable navbar -->
     <div id="navbar"></div>
+    
 
     <main class="bedrijf-page">
 
@@ -31,7 +33,7 @@
 
             <div class="bedrijf-hero-image">
                 <!-- VERVANG DIT PAD DOOR JE HUIDIGE ICT-WORX HERO-AFBEELDING -->
-                <img src="afbeeldingen/ict-worx-hero.webp" alt="ICT-Worx">
+                <img src="afbeeldingen/hero-image-bedrijf.webp" alt="ICT-Worx">
             </div>
 
             <div class="bedrijf-hero-content container">
@@ -553,98 +555,15 @@
             </div>
 
         </section>
-
-
-        <!-- =========================================================
-             CTA
-        ========================================================== -->
-        <section class="bedrijf-cta">
-
-            <div class="container">
-
-                <a href="index.html#stage" class="cta-link">
-
-                    <span class="cta-small">
-                        VOLGENDE
-                    </span>
-
-                    <span class="cta-large">
-                        MIJN STAGE
-                    </span>
-
-                    <span class="cta-arrow">
-                        →
-                    </span>
-
-                </a>
-
-            </div>
-
-        </section>
+        <div id="footer"></div>
 
     </main>
 
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS and Componets JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Navbar loader / scroll gedrag -->
-    <script>
-        fetch("components/navbar.html")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Navbar kon niet geladen worden.");
-                }
-
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById("navbar").innerHTML = data;
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-
-        /* =========================================
-           NAVBAR SCROLL DIRECTION
-        ========================================== */
-
-        const navbar = document.getElementById("navbar");
-
-        let lastScrollY = window.scrollY;
-
-        window.addEventListener("scroll", () => {
-
-            const currentScrollY = window.scrollY;
-
-            /*
-             * Negeer heel kleine scrollbewegingen.
-             * Dit voorkomt onnodig knipperen.
-             */
-            if (Math.abs(currentScrollY - lastScrollY) < 4) {
-                return;
-            }
-
-            /*
-             * Naar beneden = navbar verbergen.
-             * Naar boven = navbar opnieuw tonen.
-             *
-             * De navbar hoeft niet terug tot helemaal bovenaan
-             * om zichtbaar te worden.
-             */
-            if (currentScrollY > lastScrollY && currentScrollY > 80) {
-                navbar.classList.add("nav-hidden");
-            } else {
-                navbar.classList.remove("nav-hidden");
-            }
-
-            lastScrollY = currentScrollY;
-
-        }, { passive: true });
-
-    </script>
-
+    <script src="js/components.js"></script>
+    
 </body>
 
 </html>
