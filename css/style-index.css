@@ -63,7 +63,7 @@ hr {
     margin: 2px auto;
 }
 
-/* Everything for the Over-mij section */
+/* Everything for the Over mij section */
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -93,7 +93,7 @@ hr {
     display: block;
 }
 
-/* Everything for the Mijn-Interesses section */
+/* Everything for the Mijn interesses section */
 .interest-list {
     border-top: 1px solid #333;
 }
